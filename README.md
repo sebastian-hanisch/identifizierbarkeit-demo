@@ -1,5 +1,7 @@
 # Wann geht es gar nicht? Identifizierbarkeit – Streamlit-Demo
 
+**[→ Demo live ausprobieren](https://sebastianhanisch-identifizierbarkeit-demo.streamlit.app/)**
+
 Zehntes Stück der Linie **Kausale Diagramme und Adjustierung** in der „Konzepte“-Reihe im Portfolio von [Sebastian Hanisch](https://sebastianhanisch.net) (Operations Research und Machine Learning). Nachfolger von [instrumente-demo](https://github.com/sebastian-hanisch/instrumente-demo): Backdoor, Frontdoor und Instrument sind drei Türen, und jede war nur manchmal offen. Hier die Frage dahinter: Gibt es für ein Diagramm mit verborgenen gemeinsamen Ursachen **überhaupt** ein Verfahren, das die Wirkung aus Beobachtungsdaten bestimmt, und wenn nicht, was ist der Beweis?
 
 ## Kernfrage
@@ -98,4 +100,4 @@ Streamlit Cloud: Python 3.12.
 
 Gebaut mit Streamlit, Plotly, numpy, pandas und fpdf2.
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html).
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Kausale Diagramme: von Konfundierung bis Wahl](https://sebastianhanisch.net/konzepte-kausale-diagramme.html).
