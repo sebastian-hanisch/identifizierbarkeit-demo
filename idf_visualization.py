@@ -111,7 +111,7 @@ def build_share_table(res3: dict, res4: dict) -> pd.DataFrame:
 # ----------------------------------------------------------------------------- Experiment 2
 
 KIND_ORDER = (("none", "nicht bestimmbar, auch linear nicht", C.COLOR_BAD), ("linear_other", "nur linear, kein einzelnes Instrument", C.COLOR_NEUTRAL), ("linear_iv", "nur linear, durch ein Instrument", C.COLOR_CONTROL),
-              ("backdoor", "bestimmbar durch Backdoor", C.COLOR_GOOD), ("frontdoor", "bestimmbar durch Frontdoor (ohne Backdoor)", "#6aa49d"), ("napkin", "bestimmbar nur durch den ID (Napkin-Familie)", C.COLOR_TRUTH))
+              ("backdoor", "bestimmbar durch Backdoor", C.COLOR_GOOD), ("frontdoor", "bestimmbar durch Frontdoor (ohne Backdoor)", "#6aa49d"), ("napkin", "bestimmbar nur durch den ID (unter anderem Napkin)", C.COLOR_TRUTH))
 
 
 def build_kinds_chart(res4: dict) -> go.Figure:

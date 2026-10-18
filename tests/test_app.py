@@ -27,7 +27,7 @@ def test_app_loads_without_exception_with_the_instrument_graph():
     m = _metrics(at)
     assert m == {"ID-Algorithmus": "nicht bestimmbar", "Hedge-Aufzählung": "Hedge gefunden", "Lineares Modell": "bestimmbar", "Einordnung": "nur linear (Instrument)"}
     assert at.selectbox(key="x_select").value == 1 and at.selectbox(key="y_select").value == 2 and at.checkbox(key="dir_01").value and at.checkbox(key="bi_12").value and not at.checkbox(key="bi_01").value
-    assert any("im linearen Modell aber schon" in w.value for w in at.warning)
+    assert any("im linearen Modell (generisch) aber schon" in w.value for w in at.warning)
 
 
 def test_every_button_click_does_not_raise():

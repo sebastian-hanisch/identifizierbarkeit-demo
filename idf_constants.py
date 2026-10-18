@@ -44,10 +44,10 @@ PRESETS = {
     "Viele verborgene Ursachen": preset(directed=[(0, 1), (1, 2), (2, 3)], hidden=[(0, 1), (1, 2), (2, 3), (0, 3)], x=1, y=3),
 }
 PRESET_HELP = {
-    "Instrument (Voreinstellung)": "A → B → C mit einer verborgenen Ursache von B und C: B wirkt auf C, aber beide haben eine gemeinsame verborgene Ursache. Ohne Annahme über die Form ist die Wirkung nicht bestimmbar; im linearen Modell mit A als Instrument schon.",
+    "Instrument (Voreinstellung)": "A → B → C mit einer verborgenen Ursache von B und C: B wirkt auf C, aber beide haben eine gemeinsame verborgene Ursache. Ohne Annahme über die Form ist die Wirkung nicht bestimmbar; im linearen Modell (generisch) mit A als Instrument schon.",
     "Bow-Arc": "A → B mit einer verborgenen gemeinsamen Ursache von A und B: der kleinste nicht bestimmbare Fall. Zwei Welten mit denselben Daten und verschiedener Wirkung (Experiment 4).",
     "Backdoor": "A wirkt auf B und C, B auf C; alles beobachtet. Die Backdoor-Menge {A} genügt: bestimmbar.",
     "Frontdoor": "A → B → C mit einer verborgenen gemeinsamen Ursache von A und C: die Wirkung läuft über den beobachteten Mediator B; bestimmbar (Stück 8).",
     "Napkin": "Vier Knoten, bestimmbar, aber ohne Backdoor-, Frontdoor-Menge und ohne Instrument: nur der ID-Algorithmus findet den Weg.",
-    "Viele verborgene Ursachen": "Vier verborgene gemeinsame Ursachen entlang einer Kette: x und y hängen über Umwege zusammen, die sich nicht blockieren lassen.",
+    "Viele verborgene Ursachen": "Vier verborgene gemeinsame Ursachen in einem Kreis: x und y hängen über Umwege zusammen, die sich nicht blockieren lassen.",
 }

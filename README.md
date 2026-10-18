@@ -6,7 +6,7 @@ Zehntes Stück der Linie **Kausale Diagramme und Adjustierung** in der „Konzep
 
 ## Kernfrage
 
-Wann ist P(y | do(x)) aus der Beobachtungsverteilung bestimmbar, und wann gibt es zwei Welten mit denselben Daten und verschiedener Wirkung? Der ID-Algorithmus entscheidet vollständig, die Hedge-Aufzählung liefert den Beweis der Verneinung, und der lineare Jacobi-Rang zeigt, wie viel eine Modellannahme kauft.
+Wann ist P(y | do(x)) aus der Beobachtungsverteilung bestimmbar, und wann gibt es zwei Welten mit denselben Daten und verschiedener Wirkung? Der ID-Algorithmus entscheidet vollständig, die Hedge-Aufzählung liefert den Beweis der Verneinung, und der lineare Jacobi-Rang zeigt, wie viel eine Modellannahme kauft (generisch lokal, in einzelnen Fällen mit mehr als einer Lösung).
 
 ## Modell
 
@@ -32,8 +32,8 @@ Alle Zahlen stehen in `tests/test_claims.py`. Die Anteile gelten für die **Aufz
 | Wie viel verborgene Ursache verträgt die Bestimmbarkeit? (alle Graphen mit drei Knoten, 104 Fälle) | Ohne Modellannahme bestimmbar **45 (43,3 %)**, linear **50 (48,1 %)**; die 5 Differenzfälle sind alle Instrumente. Nach Zahl der verborgenen Ursachen 0 / 1 / 2 / 3: **100 / 64 / 18 / 0 %**. | `test_experiment_1_three_nodes` |
 | Und bei vier Knoten? (alle 4 096 Graphen, 14 272 Fälle) | Bestimmbar **5 169 (36,2 %)**, linear **6 683 (46,8 %)**. Nach 0 / 1 / 2 / 3 / 4 / 5 / 6 verborgenen Ursachen: **100 / 81 / 57 / 31 / 15 / 5 / 0 %** (linear 100 / 83 / 65 / 48 / 27 / 10 / 0 %). Nicht ohne Annahme bestimmbar, aber linear: 1 514. Ohne Annahme bestimmbar, aber nicht linear: **0**. | `test_experiment_1_four_nodes` |
 | Stimmen die Verfahren überein? | ID-Algorithmus und Hedge-Aufzählung widersprechen sich in **0 von 14 376** Fällen (drei und vier Knoten). Eine erste Fassung der Hedge-Aufzählung mit nur induzierten Teilgraphen widersprach in 289 Fällen: Ein Hedge braucht Wälder, in denen Pfeile wegfallen dürfen. | `test_id_and_hedge_agree_everywhere_and_id_implies_linear` |
-| Wer löst die bestimmbaren Fälle? (vier Knoten) | Backdoor-Menge **4 956**, Frontdoor zusätzlich **176**, **37 (0,7 %)** nur durch den ID-Algorithmus (die Napkin-Familie). Nur linear: 888 durch ein Instrument, 626 anders. Nicht bestimmbar, auch nicht linear: 7 589 (53,2 %). | `test_experiment_2_kinds` |
-| Wie fällt es bei fünf Knoten und zufälligen Graphen? (je 800 Graphen, Pfeile mit Wahrscheinlichkeit 0,5) | Bestimmbar bei 0 / 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 verborgenen Ursachen: **100 / 86 / 72 / 58 / 40 / 28 / 20 / 12 / 6 %**. | `test_experiment_3_random_graphs` |
+| Wer löst die bestimmbaren Fälle? (vier Knoten) | Backdoor-Menge **4 956**, Frontdoor zusätzlich **176**, **37 (0,7 %)** nur durch den ID-Algorithmus (unter den drei unbedingten Türen der Linie), darunter das Napkin und die bedingte Frontdoor. Nur linear: 888 durch ein Instrument, 626 anders. Nicht bestimmbar, auch nicht linear: 7 589 (53,2 %). | `test_experiment_2_kinds` |
+| Wie fällt es bei fünf Knoten und zufälligen Graphen? (je 800 Graphen, Pfeile mit Wahrscheinlichkeit 0,5) | Bestimmbar bei 0 / 1 / 2 / 3 / 4 / 5 / 6 / 7 / 8 verborgenen Ursachen: **100 / 86 / 72 / 58 / 40 / 28 / 20 / 12 / 6 %** (Stichprobenschwankung bei 800 Graphen je Stufe bis etwa 2 Prozentpunkte). | `test_experiment_3_random_graphs` |
 | Was heißt „nicht bestimmbar“? (Bow-Arc, binär: P(x = 1) = 0,5, P(y = 1 \| x = 1) = 0,7, P(y = 1 \| x = 0) = 0,3) | Welt A: verborgene Ursache, kein Pfeil, Wirkung **0,00**; Welt B: Pfeil, keine verborgene Ursache, Wirkung **0,40**; Zellen in beiden 0,35 / 0,15 / 0,15 / 0,35, also **identische Daten**. Ohne jede Annahme liegt die Wirkung in **[−0,30; 0,70]**, Breite 1,00. | `test_experiment_4_two_worlds` |
 
 ## Ehrliche Grenzen

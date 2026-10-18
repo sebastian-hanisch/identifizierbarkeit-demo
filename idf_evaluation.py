@@ -233,7 +233,7 @@ def verdict_graph(a: Analysis) -> tuple[str, str]:
         door = KIND_TEXT[a.kind]
         return "success", head + "**bestimmbar** (ID-Algorithmus und Hedge-Aufzählung stimmen überein): " + door[0].lower() + door[1:] + "."
     if a.linear:
-        return "warning", (head + "**ohne Modellannahme nicht bestimmbar** (ein Hedge existiert), im linearen Modell aber schon" +
+        return "warning", (head + "**ohne Modellannahme nicht bestimmbar** (ein Hedge existiert), im linearen Modell (generisch) aber schon" +
                            (f" (Instrument {names_of(a.methods['instruments'])})." if a.methods["instruments"] else ", wenn auch nicht durch ein einzelnes Instrument."))
     return "error", head + "**nicht bestimmbar, auch nicht im linearen Modell**: Es gibt ein Paar zweier Welten mit denselben Daten und verschiedener Wirkung."
 
@@ -249,7 +249,7 @@ def verdict_kinds(res4: dict) -> tuple[str, str]:
     k = res4["kinds"]
     ident = res4["identified"]
     return "info", (f"Von {ident} bestimmbaren Fällen löst eine Backdoor-Menge {k.get('backdoor', 0)}, die Frontdoor zusätzlich {k.get('frontdoor', 0)}; "
-                    f"{k.get('napkin', 0)} ({de(100 * k.get('napkin', 0) / ident, 1)} %) brauchen den ID-Algorithmus. Nur im linearen Modell bestimmbar sind {k.get('linear_iv', 0) + k.get('linear_other', 0)} Fälle, "
+                    f"{k.get('napkin', 0)} ({de(100 * k.get('napkin', 0) / ident, 1)} %) brauchen unter den drei Türen den ID-Algorithmus. Nur im linearen Modell bestimmbar sind {k.get('linear_iv', 0) + k.get('linear_other', 0)} Fälle, "
                     f"davon {k.get('linear_iv', 0)} durch ein Instrument.")
 
 

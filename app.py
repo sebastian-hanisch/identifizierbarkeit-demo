@@ -170,7 +170,7 @@ if st.session_state.get("exhaustive_ready"):
     st.plotly_chart(build_kinds_chart(res4), width="stretch", key="kinds_chart")
     verdict(verdict_kinds(res4))
     st.dataframe(build_kinds_table(res4), hide_index=True, width="stretch")
-    st.caption("Einige Beispiele der Napkin-Familie (bestimmbar ohne Backdoor-Menge, Frontdoor-Menge und Instrument), die kleinsten zuerst:")
+    st.caption("Einige Beispiele für Fälle, die nur der ID-Algorithmus findet (unter anderem das Napkin; bestimmbar ohne Backdoor-Menge, Frontdoor-Menge und Instrument), die kleinsten zuerst:")
     st.dataframe(build_examples_table(res4), hide_index=True, width="stretch")
 
 st.subheader("🔬 Experiment 3: Fünf Knoten, zufällige Graphen")

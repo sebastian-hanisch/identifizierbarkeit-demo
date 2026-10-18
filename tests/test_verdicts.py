@@ -16,7 +16,7 @@ def test_identifiable_graphs_are_a_success_and_name_the_door():
 
 def test_the_instrument_graph_is_a_warning_with_the_instrument_named():
     kind, text = _verdict("Instrument (Voreinstellung)")
-    assert kind == "warning" and "ohne Modellannahme nicht bestimmbar" in text and "im linearen Modell aber schon" in text and "Instrument {A}" in text
+    assert kind == "warning" and "ohne Modellannahme nicht bestimmbar" in text and "im linearen Modell (generisch) aber schon" in text and "Instrument {A}" in text
 
 
 def test_hopeless_graphs_are_an_error_with_the_two_worlds():
@@ -43,7 +43,7 @@ def test_exhaustive_verdicts_quote_the_findings(exh3):
     kind, text = ev.verdict_exhaustive(exh3, {**exh3, "by_bi": {**exh3["by_bi"], 6: exh3["by_bi"][3]}})
     assert kind == "info" and "Der ID-Algorithmus und die Hedge-Aufzählung widersprechen sich in 0 von 208 Fällen" in text and "43,3 %" in text and "48,1 %" in text
     kind, text = ev.verdict_kinds(exh3)
-    assert kind == "info" and "löst eine Backdoor-Menge 44, die Frontdoor zusätzlich 1" in text and "0 (0,0 %) brauchen den ID-Algorithmus" in text and "davon 5 durch ein Instrument" in text
+    assert kind == "info" and "löst eine Backdoor-Menge 44, die Frontdoor zusätzlich 1" in text and "0 (0,0 %) brauchen unter den drei Türen den ID-Algorithmus" in text and "davon 5 durch ein Instrument" in text
 
 
 def test_random_verdict_quotes_the_rows():
